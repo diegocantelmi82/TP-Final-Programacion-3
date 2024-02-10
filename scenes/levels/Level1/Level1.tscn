@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/parallax/Parallax.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/avenger/Avenger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/backgrounds/background1.png" type="Texture" id=4]
+[ext_resource path="res://assets/backgrounds/meteors.png" type="Texture" id=5]
+
+[node name="Level1" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+background = ExtResource( 4 )
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource( 2 )]
+speed = 130
+background = ExtResource( 5 )
+
+[node name="Avenger" parent="." instance=ExtResource( 3 )]
+position = Vector2( -48, 1005 )

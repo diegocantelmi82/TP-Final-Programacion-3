@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/Main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/parallax/Parallax.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/menu/background.png" type="Texture" id=3]
+[ext_resource path="res://assets/menu/start_button_hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/menu/start_button.png" type="Texture" id=6]
+[ext_resource path="res://assets/menu/settings_button.png" type="Texture" id=7]
+[ext_resource path="res://assets/menu/settings_button_hover.png" type="Texture" id=8]
+[ext_resource path="res://assets/menu/quit_button_hover.png" type="Texture" id=9]
+[ext_resource path="res://assets/menu/quit_button.png" type="Texture" id=10]
+[ext_resource path="res://assets/sounds/button_hover.wav" type="AudioStream" id=11]
+[ext_resource path="res://common/QuitButton.gd" type="Script" id=12]
+[ext_resource path="res://common/SettingsButton.gd" type="Script" id=13]
+[ext_resource path="res://common/StartButton.gd" type="Script" id=14]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+background = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StartButton" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -205.0
+margin_top = -820.0
+margin_right = 205.0
+margin_bottom = -699.0
+focus_neighbour_bottom = NodePath("../SettingsButton")
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 5 )
+texture_focused = ExtResource( 5 )
+script = ExtResource( 14 )
+
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -205.0
+margin_top = -620.0
+margin_right = 205.0
+margin_bottom = -499.0
+focus_neighbour_top = NodePath("../StartButton")
+focus_neighbour_bottom = NodePath("../QuitButton")
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+texture_focused = ExtResource( 8 )
+script = ExtResource( 13 )
+
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -205.0
+margin_top = -420.0
+margin_right = 205.0
+margin_bottom = -299.0
+focus_neighbour_top = NodePath("../SettingsButton")
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+texture_focused = ExtResource( 9 )
+script = ExtResource( 12 )
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )

@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/parallax/Parallax.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/menu/background.png" type="Texture" id=3]
+[ext_resource path="res://scenes/shipSelection/ShipSelectionWindow.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/menu/start_button_hover.png" type="Texture" id=5]
 [ext_resource path="res://assets/menu/start_button.png" type="Texture" id=6]
 [ext_resource path="res://assets/menu/settings_button.png" type="Texture" id=7]
@@ -13,6 +14,7 @@
 [ext_resource path="res://common/QuitButton.gd" type="Script" id=12]
 [ext_resource path="res://common/SettingsButton.gd" type="Script" id=13]
 [ext_resource path="res://common/StartButton.gd" type="Script" id=14]
+[ext_resource path="res://scenes/settings/SettingsWindow.tscn" type="PackedScene" id=15]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -67,6 +69,12 @@ texture_normal = ExtResource( 10 )
 texture_hover = ExtResource( 9 )
 texture_focused = ExtResource( 9 )
 script = ExtResource( 12 )
+
+[node name="SettingsWindow" parent="CanvasLayer" instance=ExtResource( 15 )]
+visible = false
+
+[node name="ShipSelectionWindow" parent="CanvasLayer" instance=ExtResource( 4 )]
+visible = false
 
 [node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

@@ -1,0 +1,142 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/fonts/ethnocentric rg.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/menu/grabber.png" type="Texture" id=2]
+[ext_resource path="res://assets/menu/settings_window.png" type="Texture" id=3]
+[ext_resource path="res://assets/menu/confirm_button.png" type="Texture" id=4]
+[ext_resource path="res://assets/menu/confirm_button_hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/menu/cancel_button_hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/menu/cancel_button.png" type="Texture" id=7]
+[ext_resource path="res://scenes/settings/SettingsWindow.gd" type="Script" id=8]
+[ext_resource path="res://scenes/settings/CancelButton.gd" type="Script" id=9]
+[ext_resource path="res://scenes/settings/ConfirmButton.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=6]
+size = 72
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.94902, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.94902, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0.94902, 0.309804, 1 )
+
+[node name="SettingsWindow" type="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -470.0
+margin_top = -700.0
+margin_right = 470.0
+margin_bottom = 700.0
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="SettingsTitle" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -243.0
+margin_top = 250.0
+margin_right = 243.0
+margin_bottom = 338.0
+custom_fonts/font = SubResource( 6 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="MusicLabel" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 400.0
+margin_right = 313.0
+margin_bottom = 459.0
+custom_fonts/font = SubResource( 3 )
+text = "Music"
+align = 1
+valign = 1
+
+[node name="MusicSlider" type="HSlider" parent="."]
+margin_left = 360.0
+margin_top = 400.0
+margin_right = 860.0
+margin_bottom = 460.0
+custom_icons/grabber_highlight = ExtResource( 2 )
+custom_icons/grabber = ExtResource( 2 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 4 )
+max_value = 1.0
+step = 0.01
+
+[node name="SfxLabel" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 500.0
+margin_right = 313.0
+margin_bottom = 559.0
+custom_fonts/font = SubResource( 3 )
+text = "SFX"
+align = 1
+valign = 1
+
+[node name="SfxSlider" type="HSlider" parent="."]
+margin_left = 360.0
+margin_top = 500.0
+margin_right = 860.0
+margin_bottom = 560.0
+custom_icons/grabber_highlight = ExtResource( 2 )
+custom_icons/grabber = ExtResource( 2 )
+custom_styles/slider = SubResource( 1 )
+custom_styles/grabber_area_highlight = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 5 )
+max_value = 1.0
+step = 0.01
+
+[node name="ConfirmButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -170.0
+margin_top = -50.0
+margin_right = 40.0
+margin_bottom = 160.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_focused = ExtResource( 5 )
+script = ExtResource( 10 )
+
+[node name="CancelButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -50.0
+margin_right = 240.0
+margin_bottom = 160.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+script = ExtResource( 9 )

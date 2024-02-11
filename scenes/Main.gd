@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready():
 	$CanvasLayer/StartButton.grab_focus()
+	$CanvasLayer/SettingsButton.connect("showSettingsWindow", $CanvasLayer/SettingsWindow, "_show_window")
 #	$Avenger.connect("shoot", self, "_on_Ship_shoot")
 	#$Defender.connect("shoot", self, "_on_Ship_shoot")
 	#$Striker.connect("shoot", self, "_on_Ship_shoot")

@@ -10,7 +10,7 @@ func _ready():
 	self.connect("mouse_entered", self, "_grab_focus")
 
 func playHoverSound():
-	if (buttonHoverSound):
+	if (buttonHoverSound && !self.disabled):
 		buttonHoverSound.volume_db = linear2db(Settings.sfx_volume)
 		buttonHoverSound.play()
 		

@@ -82,6 +82,7 @@ config/icon="res://icon.png"
 
 Settings="*res://common/Settings.gd"
 Player="*res://common/Player.gd"
+AudioManager="*res://common/AudioManager.gd"
 
 [display]
 

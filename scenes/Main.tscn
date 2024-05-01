@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/parallax/Parallax.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/menu/settings_button_hover.png" type="Texture" id=8]
 [ext_resource path="res://assets/menu/quit_button_hover.png" type="Texture" id=9]
 [ext_resource path="res://assets/menu/quit_button.png" type="Texture" id=10]
-[ext_resource path="res://assets/sounds/button_hover.wav" type="AudioStream" id=11]
 [ext_resource path="res://common/QuitButton.gd" type="Script" id=12]
 [ext_resource path="res://common/SettingsButton.gd" type="Script" id=13]
 [ext_resource path="res://common/StartButton.gd" type="Script" id=14]
@@ -75,6 +74,3 @@ visible = false
 
 [node name="ShipSelectionWindow" parent="CanvasLayer" instance=ExtResource( 4 )]
 visible = false
-
-[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )

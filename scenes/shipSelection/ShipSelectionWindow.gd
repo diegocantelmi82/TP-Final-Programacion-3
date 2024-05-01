@@ -22,6 +22,13 @@ func _show_window():
 		$StrikerButton.disabled = true
 		$StrikerButton.focus_mode = FOCUS_NONE
 		
+	if Player.ships[Player.player_ship.AVENGER].is_alive:
+		$AvengerButton.grab_focus()
+	elif Player.ships[Player.player_ship.DEFENDER].is_alive:
+		$DefenderButton.grab_focus()
+	elif Player.ships[Player.player_ship.STRIKER].is_alive:
+		$StrikerButton.grab_focus()
+		
 	self.show()
 
 func _close_window():

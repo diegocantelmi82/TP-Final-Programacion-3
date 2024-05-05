@@ -1,16 +1,9 @@
-extends Area2D
-
-signal shoot(pos)
-
-export (float) var SPEED = 700
-export (float) var MAX_HEALTH = 100
-
-onready var health = MAX_HEALTH
-onready var bulletInitPos = $BulletInitPos
-onready var bulletInitPos2 = $BulletInitPos2
+extends Ship
 
 var playerControllerClass = load("res://common/playerController/playerController.gd")
 var playerController = playerControllerClass.new()
+var Bullet = preload("res://scenes/bullet/Bullet.tscn")
+onready var bulletInitPos2 = $BulletInitPos2
 
 func _ready():
 	pass
@@ -20,7 +13,14 @@ func _input(event):
 
 func _physics_process(delta):
 	playerController.handleInput(self, delta)
-
+	
 func shoot_bullet():
-	emit_signal("shoot", bulletInitPos.global_position)
-	emit_signal("shoot", bulletInitPos2.global_position)
+	var b = Bullet.instance()
+	b._init()
+	b.global_position = bulletInitPos.global_position
+	get_node("/root").add_child(b)
+	
+	b = Bullet.instance()
+	b._init()
+	b.global_position = bulletInitPos2.global_position
+	get_node("/root").add_child(b)

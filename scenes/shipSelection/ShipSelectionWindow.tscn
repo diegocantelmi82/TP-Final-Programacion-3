@@ -74,6 +74,7 @@ texture_hover = ExtResource( 14 )
 texture_disabled = ExtResource( 19 )
 texture_focused = ExtResource( 14 )
 script = ExtResource( 22 )
+selectedShip = 1
 
 [node name="StrikerButton" type="TextureButton" parent="."]
 margin_left = 100.0
@@ -86,6 +87,7 @@ texture_hover = ExtResource( 16 )
 texture_disabled = ExtResource( 20 )
 texture_focused = ExtResource( 16 )
 script = ExtResource( 22 )
+selectedShip = 2
 
 [node name="AvengerContainer" type="HBoxContainer" parent="."]
 margin_left = 350.0

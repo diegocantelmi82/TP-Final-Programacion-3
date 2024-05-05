@@ -5,7 +5,8 @@ func _ready():
 	$DefenderButton.connect("startLevel", self, "_start_level")
 	$StrikerButton.connect("startLevel", self, "_start_level")
 	
-func _start_level():
+func _start_level(mainShip):
+	Player.main_ship = mainShip
 	get_tree().change_scene("res://scenes/levels/Level1/Level" + str(Player.current_level) + ".tscn")
 	self._close_window()
 	

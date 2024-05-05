@@ -20,56 +20,20 @@ _global_script_classes=[ {
 "path": "res://common/Ship.gd"
 }, {
 "base": "Reference",
-"class": "playerAnalogJoystick",
-"language": "GDScript",
-"path": "res://common/playerController/playerAnalogJoystick.gd"
-}, {
-"base": "Reference",
 "class": "playerController",
 "language": "GDScript",
 "path": "res://common/playerController/playerController.gd"
 }, {
 "base": "Reference",
-"class": "playerEvent",
-"language": "GDScript",
-"path": "res://common/playerController/playerEvent.gd"
-}, {
-"base": "Reference",
-"class": "playerJoystick",
-"language": "GDScript",
-"path": "res://common/playerController/playerJoystick.gd"
-}, {
-"base": "Node2D",
-"class": "playerMouse",
-"language": "GDScript",
-"path": "res://common/playerController/playerMouse.gd"
-}, {
-"base": "Reference",
 "class": "playerPolling",
 "language": "GDScript",
 "path": "res://common/playerController/playerPolling.gd"
-}, {
-"base": "Node2D",
-"class": "playerScreenTouch",
-"language": "GDScript",
-"path": "res://common/playerController/playerScreenTouch.gd"
-}, {
-"base": "Node2D",
-"class": "playerTap",
-"language": "GDScript",
-"path": "res://common/playerController/playerTap.gd"
 } ]
 _global_script_class_icons={
 "GenericButton": "",
 "Ship": "",
-"playerAnalogJoystick": "",
 "playerController": "",
-"playerEvent": "",
-"playerJoystick": "",
-"playerMouse": "",
-"playerPolling": "",
-"playerScreenTouch": "",
-"playerTap": ""
+"playerPolling": ""
 }
 
 [application]

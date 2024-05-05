@@ -2,6 +2,7 @@ extends Node
 
 var ps: Resource
 var playerShip: Ship
+var shipInitPos = Vector2(-45, 1005)
 
 func _ready():
 	loadPlayerShip()
@@ -14,11 +15,13 @@ func loadPlayerShip():
 		ps = ResourceLoader.load("res://scenes/avenger/Avenger.tscn")
 	elif Player.main_ship == Player.player_ship.DEFENDER:
 		ps = ResourceLoader.load("res://scenes/defender/Defender.tscn")
+		shipInitPos = Vector2(-45, 1150)
 	elif Player.main_ship == Player.player_ship.STRIKER:
 		ps = ResourceLoader.load("res://scenes/striker/Striker.tscn")
+		shipInitPos = Vector2(0, 1300)
 		
 	playerShip = ps.instance()
-	playerShip.global_position = Vector2(-45, 1005)
+	playerShip.global_position = shipInitPos
 	self.add_child(playerShip)
 	
 	# Codigo de prueba para testear colisiones

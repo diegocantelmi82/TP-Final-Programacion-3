@@ -2,7 +2,7 @@ extends Ship
 
 var direction = Vector2(1, 1)
 var Bullet = preload("res://scenes/bullet/Bullet.tscn")
-onready var bulletInitPos2 = $BulletInitPos2
+#onready var bulletInitPos2 = $BulletInitPos2
 
 func _ready():
 	self.connect("area_entered", self, "_on_area_entered")

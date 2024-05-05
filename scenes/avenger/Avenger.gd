@@ -1,14 +1,8 @@
-extends Ship
-
-var playerControllerClass = load("res://common/playerController/playerController.gd")
-var playerController = playerControllerClass.new()
-var Bullet = preload("res://scenes/bullet/Bullet.tscn")
-
-func _ready():
-	pass
+extends PlayerShip
 
 func _physics_process(delta):
-	playerController.handleInput(self, delta)
+	position.x = clamp(position.x, -550, 450)
+	position.y = clamp(position.y, -700, 1200)
 	
 func shoot_bullet():
 	var b = Bullet.instance()

@@ -4,8 +4,9 @@ export var SPEED = 1000
 var type = "bullet"
 var direction = Vector2()
 var animation = "flash"
+var power = 10
 
-func _init(enemy_bullet = false):
+func _init(b_power = power, enemy_bullet = false):
 	if enemy_bullet:
 		direction = Vector2(0, 1)
 		rotate(PI)
@@ -15,6 +16,8 @@ func _init(enemy_bullet = false):
 		direction = Vector2(0, -1)
 		set_collision_mask_bit(0, false)
 		set_collision_mask_bit(1, true)
+		
+	power = b_power
 		
 func _ready():
 	$AnimatedSprite.connect("animation_finished", self, "animation_end")

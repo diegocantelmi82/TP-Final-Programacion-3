@@ -4,6 +4,9 @@ func _input(event):
 	pass
 
 func getPlayerAction(player, delta):
+	if !player.isAlive:
+		return
+	
 	var motion = Vector2()
 	
 	if (Input.is_action_pressed("move_up")):

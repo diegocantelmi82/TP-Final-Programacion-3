@@ -6,6 +6,6 @@ func _physics_process(delta):
 	
 func shoot_bullet():
 	var b = Bullet.instance()
-	b._init()
+	b._init(bullet_power)
 	b.global_position = bulletInitPos.global_position
 	get_node("/root").add_child(b)

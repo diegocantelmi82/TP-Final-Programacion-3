@@ -33,6 +33,7 @@ SPEED = 175
 MAX_HP = 80
 MAX_SHIELD = 0
 hp = 80
+bullet_power = 30
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 3.14159

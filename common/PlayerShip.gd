@@ -24,4 +24,9 @@ func shoot_bullet():
 	
 func dead():
 	.dead()
-	emit_signal("dead")
+	Player.ships[Player.main_ship].is_alive = 0
+	
+func animation_end():
+	if animation == "explode":
+		queue_free()
+		emit_signal("dead")

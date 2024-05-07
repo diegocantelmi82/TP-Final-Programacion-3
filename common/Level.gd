@@ -6,6 +6,7 @@ var shipInitPos = Vector2(-45, 1005)
 
 func _ready():
 	loadPlayerShip()
+	playerShip.connect("dead", self, "on_ship_destroy")
 
 func _process(delta):
 	pass
@@ -40,3 +41,6 @@ func loadPlayerShip():
 	enemy.global_position = Vector2(800, 200)
 	self.add_child(enemy)
 	# Codigo de prueba para testear colisiones
+	
+func on_ship_destroy():
+	get_tree().change_scene("res://scenes/gameStatus/GameStatus.tscn")

@@ -43,4 +43,7 @@ func loadPlayerShip():
 	# Codigo de prueba para testear colisiones
 	
 func on_ship_destroy():
+	if !Player.ships[Player.player_ship.AVENGER].is_alive && !Player.ships[Player.player_ship.DEFENDER].is_alive && !Player.ships[Player.player_ship.STRIKER].is_alive:
+		Player.game_state = Player.game_status.GAMEOVER
+	
 	get_tree().change_scene("res://scenes/gameStatus/GameStatus.tscn")

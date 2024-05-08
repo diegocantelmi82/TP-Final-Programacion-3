@@ -1,7 +1,9 @@
 extends Node
 
 enum player_ship {AVENGER, DEFENDER, STRIKER}
+enum game_status {PLAY, GAMEOVER, END}
 
+var game_state: int = game_status.PLAY
 var main_ship: int = player_ship.AVENGER
 var current_level: int = 1
 var secondary_ammo: int = 3

@@ -1,4 +1,1 @@
-extends Ship
-
-func _ready():
-	pass
+extends Enemy

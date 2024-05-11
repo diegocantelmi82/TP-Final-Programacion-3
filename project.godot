@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Ship",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://common/Enemy.gd"
+}, {
 "base": "TextureButton",
 "class": "GenericButton",
 "language": "GDScript",
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://common/playerController/playerPolling.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
 "GenericButton": "",
 "PlayerShip": "",
 "Ship": "",

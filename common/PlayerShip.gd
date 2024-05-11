@@ -7,6 +7,7 @@ signal dead()
 var playerControllerClass = load("res://common/playerController/playerController.gd")
 var playerController = playerControllerClass.new()
 var Bullet = preload("res://scenes/bullet/Bullet.tscn")
+var type = "player"
 
 func _physics_process(delta):
 	playerController.handleInput(self, delta)

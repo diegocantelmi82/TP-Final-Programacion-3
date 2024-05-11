@@ -42,3 +42,6 @@ position = Vector2( -72, 15 )
 
 [node name="BulletInitPos2" type="Position2D" parent="."]
 position = Vector2( 72, 14 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

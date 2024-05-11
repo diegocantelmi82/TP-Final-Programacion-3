@@ -18,7 +18,7 @@ func _ready():
 	self.connect("area_entered", self, "_on_ship_area_entered")
 	$AnimatedSprite.connect("animation_finished", self, "animation_end")
 
-func _process(delta):
+func _process(_delta):
 	if hp <= 0 && isAlive:
 		dead()
 
@@ -34,3 +34,5 @@ func animation_end():
 func _on_ship_area_entered(area):
 	if area.type == "bullet":
 		hp -= area.power
+	elif area.type == "enemy":
+		hp = 0

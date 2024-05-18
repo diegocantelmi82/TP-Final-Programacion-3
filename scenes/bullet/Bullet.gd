@@ -1,3 +1,5 @@
+class_name Bullet
+
 extends Area2D
 
 export var SPEED = 1000
@@ -6,7 +8,7 @@ var direction = Vector2()
 var animation = "flash"
 var power = 10
 
-func _init(b_power = power, enemy_bullet = false):
+func init(b_power = power, enemy_bullet = false):
 	if enemy_bullet:
 		direction = Vector2(0, 1)
 		rotate(PI)

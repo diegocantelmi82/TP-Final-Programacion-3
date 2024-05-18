@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/ships/defender/defender_exhaust_5.png" type="Texture" id=1]
 [ext_resource path="res://assets/ships/defender/defender_exhaust_2.png" type="Texture" id=2]
@@ -21,6 +21,11 @@
 [ext_resource path="res://assets/ships/defender/defender_explosion_8.png" type="Texture" id=19]
 [ext_resource path="res://assets/ships/defender/defender.png" type="Texture" id=20]
 [ext_resource path="res://scenes/defender/Defender.gd" type="Script" id=21]
+[ext_resource path="res://shaders/PlayerShoot.gdshader" type="Shader" id=22]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 22 )
+shader_param/shader_color = null
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -49,6 +54,7 @@ MAX_SHIELD = 150
 hp = 120
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 2 )
 position = Vector2( 580, 616 )
 frames = SubResource( 1 )
 animation = "explode"
@@ -63,3 +69,9 @@ position = Vector2( 517, 512 )
 
 [node name="BulletInitPos2" type="Position2D" parent="."]
 position = Vector2( 643, 512 )
+
+[node name="SpecialBulletInitPos" type="Position2D" parent="."]
+position = Vector2( 580, 467 )
+
+[node name="ShootChargeTimer" type="Timer" parent="."]
+one_shot = true

@@ -64,12 +64,11 @@ animations = [ {
 } ]
 
 [node name="Striker" type="Area2D"]
+scale = Vector2( 0.8, 0.8 )
 collision_mask = 2
 script = ExtResource( 21 )
 SPEED = 900
-MAX_HP = 80
-MAX_SHIELD = 70
-hp = 80
+MAX_SHIELD = 80
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 2 )
@@ -90,6 +89,7 @@ position = Vector2( 594, 373 )
 position = Vector2( 523, 288 )
 
 [node name="ShootChargeTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="Shield" type="AnimatedSprite" parent="."]

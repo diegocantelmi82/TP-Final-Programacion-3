@@ -1,8 +1,8 @@
 extends PlayerShip
 
 func _physics_process(_delta):
-	position.x = clamp(position.x, -550, 450)
-	position.y = clamp(position.y, -700, 1200)
+	position.x = clamp(position.x, -405, 590)
+	position.y = clamp(position.y, -525, 1350)
 	
 func shoot_bullet():
 	var b = Bullet.instance()

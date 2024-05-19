@@ -51,23 +51,27 @@ animations = [ {
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 7 ), ExtResource( 18 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "move",
-"speed": 60.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 20 ) ],
 "loop": false,
 "name": "explode",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 7 ), ExtResource( 18 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "move",
+"speed": 60.0
 } ]
 
 [node name="Avenger" type="Area2D"]
+scale = Vector2( 0.75, 0.75 )
 collision_mask = 2
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
+MAX_HP = 80
+hp = 80
+special_bullet_power = 150
 
 [node name="Shield" type="AnimatedSprite" parent="."]
 material = SubResource( 4 )
@@ -96,4 +100,5 @@ position = Vector2( 586.667, 609.333 )
 position = Vector2( 586.667, 609.333 )
 
 [node name="ShootChargeTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true

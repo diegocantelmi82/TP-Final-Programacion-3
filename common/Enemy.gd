@@ -18,8 +18,6 @@ func _process(delta):
 	position += motion.normalized() * SPEED * delta
 	
 func onTimeout():
-	#$Timer.wait_time = randi() % 2 + 2
-	#direction = direction * Vector2(-1, 1)
 	shoot_bullet()
 	
 func shoot_bullet():
@@ -35,6 +33,13 @@ func shoot_bullet():
 	
 func dead():
 	.dead()
-	var powerUp = PowerUp.instance()
-	powerUp.initPowerUp(self.global_position)
-	get_node("/root").add_child(powerUp)
+	dropPowerUp()
+	
+func dropPowerUp():
+	randomize()
+	var random_number = randi() % 10 + 1
+	
+	if random_number == 7:
+		var powerUp = PowerUp.instance()
+		powerUp.initPowerUp(self.global_position)
+		get_node("/root").add_child(powerUp)

@@ -25,10 +25,12 @@ animations = [ {
 } ]
 
 [node name="Enemy2" type="Area2D"]
+scale = Vector2( 0.75, 0.75 )
 collision_layer = 2
 collision_mask = 0
 script = ExtResource( 9 )
-SPEED = 100
+SPEED = 120
+bullet_power = 25
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 3.14159

@@ -9,3 +9,5 @@ func shoot_bullet():
 	b.init(bullet_power)
 	b.global_position = bulletInitPos.global_position
 	get_node("/root").add_child(b)
+	
+	AudioManager.play("laser")

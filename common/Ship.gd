@@ -21,11 +21,18 @@ func _ready():
 func _process(_delta):
 	if hp <= 0 && isAlive:
 		dead()
+		
+	if has_node("Shield"):
+		if shield > 0:
+			self.get_node("Shield").get_material().set_shader_param("shield", 1)
+		else:
+			self.get_node("Shield").get_material().set_shader_param("shield", 0)
 
 func dead():
 	isAlive = false
 	animation = "explode"
 	$AnimatedSprite.play("explode")
+	AudioManager.play("ship_explosion")
 	
 func animation_end():
 	if animation == "explode":
@@ -33,6 +40,9 @@ func animation_end():
 		
 func _on_ship_area_entered(area):
 	if area.type == "bullet":
-		hp -= area.power
+		if shield > 0:
+			shield -= area.power
+		else:
+			hp -= area.power
 	elif area.type == "enemy":
 		hp = 0

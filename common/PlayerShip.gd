@@ -5,6 +5,7 @@ extends Ship
 signal dead()
 
 export var special_bullet_power = 100
+export var MAX_SPECIAL_AMMO = 3
 
 var playerControllerClass = load("res://common/playerController/playerController.gd")
 var playerController = playerControllerClass.new()
@@ -28,6 +29,8 @@ func shoot_bullet():
 	b.global_position = bulletInitPos2.global_position
 	get_node("/root").add_child(b)
 	
+	AudioManager.play("laser")
+	
 func shoot_secondary_weapon():
 	Player.ships[Player.main_ship].secondary_ammo -= 1
 	
@@ -39,8 +42,17 @@ func shoot_secondary_weapon():
 func dead():
 	.dead()
 	Player.ships[Player.main_ship].is_alive = 0
+	AudioManager.stopAllStreamPlayers()
 	
 func animation_end():
 	if animation == "explode":
 		queue_free()
 		emit_signal("dead")
+		
+func setShield(pwr):
+	shield += pwr
+	shield = clamp(shield, 0, MAX_SHIELD)
+	
+func setAmmo(qty):
+	Player.ships[Player.main_ship].secondary_ammo += 1
+	Player.ships[Player.main_ship].secondary_ammo = clamp(Player.ships[Player.main_ship].secondary_ammo, 0, MAX_SPECIAL_AMMO)

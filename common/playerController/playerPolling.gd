@@ -24,9 +24,11 @@ func getPlayerAction(player, delta):
 		if (Input.is_action_just_pressed("secondary_shoot")):
 			player.get_node("ShootChargeTimer").start()
 			player.get_node("AnimatedSprite").get_material().set_shader_param("shader_color", 1)
+			AudioManager.play("charge_special_shoot")
 		elif (Input.is_action_just_released("secondary_shoot")):
 			if player.get_node("ShootChargeTimer").get_time_left() == 0:
 				player.shoot_secondary_weapon()
+				AudioManager.play("special_shoot")
 				
 			player.get_node("ShootChargeTimer").stop()
 			player.get_node("AnimatedSprite").get_material().set_shader_param("shader_color", 0)

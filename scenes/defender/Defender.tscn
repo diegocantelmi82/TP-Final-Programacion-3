@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/ships/defender/defender_exhaust_5.png" type="Texture" id=1]
 [ext_resource path="res://assets/ships/defender/defender_exhaust_2.png" type="Texture" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://assets/ships/defender/defender.png" type="Texture" id=20]
 [ext_resource path="res://scenes/defender/Defender.gd" type="Script" id=21]
 [ext_resource path="res://shaders/PlayerShoot.gdshader" type="Shader" id=22]
+[ext_resource path="res://assets/ships/avenger/avenger.png" type="Texture" id=23]
+[ext_resource path="res://shaders/Shield.gdshader" type="Shader" id=24]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 22 )
@@ -43,6 +45,22 @@ animations = [ {
 "loop": true,
 "name": "move",
 "speed": 60.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 24 )
+shader_param/shield = true
+shader_param/color = Plane( 0, 0.7, 1, 1 )
+shader_param/outer_radius = 0.35
+shader_param/inner_radius = 0.275
+shader_param/fade_effect_amount = 0.01
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 23 ) ],
+"loop": false,
+"name": "default",
+"speed": 1.0
 } ]
 
 [node name="Defender" type="Area2D"]
@@ -75,3 +93,9 @@ position = Vector2( 580, 467 )
 
 [node name="ShootChargeTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Shield" type="AnimatedSprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 580, 589 )
+scale = Vector2( 1.06019, 1.44295 )
+frames = SubResource( 4 )

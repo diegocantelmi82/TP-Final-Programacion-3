@@ -1,5 +1,5 @@
 extends Node
 
 # Settings
-var music_volume: float = 0.8
-var sfx_volume: float = 0.8
+var music_volume: float = 0.5
+var sfx_volume: float = 0.7

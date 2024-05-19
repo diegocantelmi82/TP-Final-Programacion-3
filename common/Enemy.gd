@@ -4,6 +4,7 @@ extends Ship
 
 var direction = Vector2(0, 1)
 var Bullet = preload("res://scenes/bullet/Bullet.tscn")
+var PowerUp = preload("res://scenes/powerUp/PowerUp.tscn")
 var type = "enemy"
 
 func _ready():
@@ -31,3 +32,9 @@ func shoot_bullet():
 	b.init(bullet_power, true)
 	b.global_position = bulletInitPos2.global_position
 	get_node("/root").add_child(b)
+	
+func dead():
+	.dead()
+	var powerUp = PowerUp.instance()
+	powerUp.initPowerUp(self.global_position)
+	get_node("/root").add_child(powerUp)

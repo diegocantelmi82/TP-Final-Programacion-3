@@ -7,6 +7,7 @@ var shipInitPos = Vector2(-45, 1005)
 func _ready():
 	loadPlayerShip()
 	playerShip.connect("dead", self, "on_ship_destroy")
+	AudioManager.play("blitz", true)
 
 func _process(delta):
 	pass

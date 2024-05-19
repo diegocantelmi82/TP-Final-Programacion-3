@@ -1,7 +1,13 @@
 extends Node
 
 const assets = {
-	"button_hover": "res://assets/sounds/button_hover.wav"
+	"blitz": "res://assets/sounds/blitz.wav",
+	"button_hover": "res://assets/sounds/button_hover.wav",
+	"laser": "res://assets/sounds/laser.wav",
+	"charge_special_shoot": "res://assets/sounds/charge_special_shoot.wav",
+	"special_shoot": "res://assets/sounds/special_shoot.wav",
+	"ship_explosion": "res://assets/sounds/ship_explosion.wav",
+	"power_up": "res://assets/sounds/power_up.wav"
 }
 
 export var audioStreamPlayers = 8
@@ -14,14 +20,14 @@ func _ready():
 		availableStreamPlayers.append(stream)
 		self.add_child(stream)
 
-func play(name, loop = false):
+func play(name, isMusic = false):
 	if (assets.has(name) && ResourceLoader.exists(assets[name])):
 		var player = getStreamPlayer()
 		
 		if player:
 			player.stream = ResourceLoader.load(assets[name])
 			
-			if (loop):
+			if (isMusic):
 				player.set_volume_db(linear2db(Settings.music_volume))
 			else:
 				player.set_volume_db(linear2db(Settings.sfx_volume))
@@ -34,3 +40,7 @@ func getStreamPlayer():
 			return i
 			
 	return null
+	
+func stopAllStreamPlayers():
+	for i in availableStreamPlayers:
+		i.stop()

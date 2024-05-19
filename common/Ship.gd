@@ -42,7 +42,14 @@ func _on_ship_area_entered(area):
 	if area.type == "bullet":
 		if shield > 0:
 			shield -= area.power
+			shield = clamp(shield, 0, MAX_SHIELD)
 		else:
 			hp -= area.power
+			hp = clamp(hp, 0, MAX_HP)
 	elif area.type == "enemy":
 		hp = 0
+		shield = 0
+		
+	if self.type == "player":
+		Player.ships[Player.main_ship].hp = hp
+		Player.ships[Player.main_ship].shield = shield

@@ -12,16 +12,22 @@ var ships = {
 			player_ship.AVENGER: 
 								{
 								"is_alive": 1,
+								"hp": 80,
+								"shield": 0,
 								"secondary_ammo": secondary_ammo
 								},
 			player_ship.DEFENDER: 
 								{
 								"is_alive": 1,
+								"hp": 120,
+								"shield": 0,
 								"secondary_ammo": secondary_ammo
 								},
 			player_ship.STRIKER: 
 								{
 								"is_alive": 1,
+								"hp": 100,
+								"shield": 0,
 								"secondary_ammo": secondary_ammo
 								}
 			}

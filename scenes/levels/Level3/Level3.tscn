@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/backgrounds/background3.png" type="Texture" id=1]
 [ext_resource path="res://scenes/parallax/Parallax.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/backgrounds/stars.png" type="Texture" id=3]
+[ext_resource path="res://scenes/ui/Ui.tscn" type="PackedScene" id=4]
 
 [node name="Level3" type="Node2D"]
 
@@ -11,3 +12,5 @@ background = ExtResource( 1 )
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource( 2 )]
 background = ExtResource( 3 )
+
+[node name="Ui" parent="." instance=ExtResource( 4 )]

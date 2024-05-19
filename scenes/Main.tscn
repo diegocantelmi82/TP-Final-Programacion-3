@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/parallax/Parallax.tscn" type="PackedScene" id=2]
@@ -10,10 +10,15 @@
 [ext_resource path="res://assets/menu/settings_button_hover.png" type="Texture" id=8]
 [ext_resource path="res://assets/menu/quit_button_hover.png" type="Texture" id=9]
 [ext_resource path="res://assets/menu/quit_button.png" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/ethnocentric rg.otf" type="DynamicFontData" id=11]
 [ext_resource path="res://common/QuitButton.gd" type="Script" id=12]
 [ext_resource path="res://common/SettingsButton.gd" type="Script" id=13]
 [ext_resource path="res://common/StartButton.gd" type="Script" id=14]
 [ext_resource path="res://scenes/settings/SettingsWindow.tscn" type="PackedScene" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 11 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,6 +27,20 @@ script = ExtResource( 1 )
 background = ExtResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Space Survival" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -480.0
+margin_top = -528.5
+margin_right = 480.0
+margin_bottom = -217.5
+custom_fonts/font = SubResource( 1 )
+text = "Space
+Survival"
+align = 1
 
 [node name="StartButton" type="TextureButton" parent="CanvasLayer"]
 anchor_left = 0.5

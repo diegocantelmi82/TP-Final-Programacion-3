@@ -9,15 +9,9 @@ var type = "enemy"
 
 func _ready():
 	$Timer.connect("timeout", self, "onTimeout")
-	$Timer.wait_time = 10
+	$ShootTimer.connect("timeout", self, "onShootTimerTimeout")
 	
-func _process(delta):
-	var motion = Vector2()
-	motion += direction
-	motion.x += cos($Timer.get_time_left())
-	position += motion.normalized() * SPEED * delta
-	
-func onTimeout():
+func onShootTimerTimeout():
 	shoot_bullet()
 	
 func shoot_bullet():

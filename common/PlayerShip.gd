@@ -54,5 +54,5 @@ func setShield(pwr):
 	shield = clamp(shield, 0, MAX_SHIELD)
 	
 func setAmmo(qty):
-	Player.ships[Player.main_ship].secondary_ammo += 1
+	Player.ships[Player.main_ship].secondary_ammo += qty
 	Player.ships[Player.main_ship].secondary_ammo = clamp(Player.ships[Player.main_ship].secondary_ammo, 0, MAX_SPECIAL_AMMO)

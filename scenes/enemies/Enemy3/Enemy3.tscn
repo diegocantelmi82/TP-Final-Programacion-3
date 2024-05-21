@@ -48,3 +48,10 @@ position = Vector2( 72, 14 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

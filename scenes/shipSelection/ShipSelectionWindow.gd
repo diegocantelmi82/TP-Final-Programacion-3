@@ -7,7 +7,7 @@ func _ready():
 	
 func _start_level(mainShip):
 	Player.main_ship = mainShip
-	get_tree().change_scene("res://scenes/levels/Level1/Level" + str(Player.current_level) + ".tscn")
+	get_tree().change_scene("res://scenes/levels/Level" + str(Player.current_level) + "/Level" + str(Player.current_level) + ".tscn")
 	
 func _show_window():
 	if (!Player.ships[Player.player_ship.AVENGER].is_alive):

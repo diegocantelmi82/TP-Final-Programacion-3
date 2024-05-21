@@ -4,5 +4,5 @@ extends Node
 var debug: bool = true
 
 # Settings
-var music_volume: float = 0.5
-var sfx_volume: float = 0.7
+var music_volume: float = 0.1
+var sfx_volume: float = 0.3

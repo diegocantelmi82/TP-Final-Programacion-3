@@ -17,3 +17,7 @@ speed = 130
 background = ExtResource( 5 )
 
 [node name="Ui" parent="." instance=ExtResource( 3 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true

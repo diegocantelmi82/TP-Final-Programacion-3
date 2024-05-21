@@ -5,6 +5,7 @@ var playerShip: Ship
 var shipInitPos = Vector2(-45, 1005)
 
 func _ready():
+	$Timer.connect("timeout", self, "onTimeout")
 	loadPlayerShip()
 	playerShip.connect("dead", self, "on_ship_destroy")
 	AudioManager.play("blitz", true)
@@ -47,4 +48,9 @@ func on_ship_destroy():
 	if !Player.ships[Player.player_ship.AVENGER].is_alive && !Player.ships[Player.player_ship.DEFENDER].is_alive && !Player.ships[Player.player_ship.STRIKER].is_alive:
 		Player.game_state = Player.game_status.GAMEOVER
 	
+	get_tree().change_scene("res://scenes/gameStatus/GameStatus.tscn")
+	
+func onTimeout():
+	Player.current_level += 1
+	Player.current_level = clamp(Player.current_level, 1, 4)
 	get_tree().change_scene("res://scenes/gameStatus/GameStatus.tscn")

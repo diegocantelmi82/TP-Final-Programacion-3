@@ -53,3 +53,4 @@ func _on_ship_area_entered(area):
 	if self.type == "player":
 		Player.ships[Player.main_ship].hp = hp
 		Player.ships[Player.main_ship].shield = shield
+		AudioManager.play("hit")

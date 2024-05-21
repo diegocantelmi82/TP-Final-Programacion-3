@@ -7,7 +7,10 @@ const assets = {
 	"charge_special_shoot": "res://assets/sounds/charge_special_shoot.wav",
 	"special_shoot": "res://assets/sounds/special_shoot.wav",
 	"ship_explosion": "res://assets/sounds/ship_explosion.wav",
-	"power_up": "res://assets/sounds/power_up.wav"
+	"power_up": "res://assets/sounds/power_up.wav",
+	"hit": "res://assets/sounds/hit.wav",
+	"ready": "res://assets/sounds/ready.wav",
+	"warning": "res://assets/sounds/warning.wav"
 }
 
 export var audioStreamPlayers = 8

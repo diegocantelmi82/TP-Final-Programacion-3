@@ -5,14 +5,19 @@ var spawner: Spawner
 var ps: Resource
 var playerShip: Ship
 var shipInitPos = Vector2(-45, 1005)
+var bossShip: Ship
 
 func _ready():
 	$Timer.connect("timeout", self, "onTimeout")
+	$TextTimer.connect("timeout", self, "onTextTimeout")
 	loadPlayerShip()
 	playerShip.connect("dead", self, "on_ship_destroy")
+	#bossShip.connect("dead", self, "on_boss_destroy")
 	AudioManager.play("blitz", true)
 	spawner = spawnerClass.new()
 	add_child(spawner)
+	$TextTimer.start()
+	AudioManager.play("ready")
 	
 func loadPlayerShip():
 	if Player.main_ship == Player.player_ship.AVENGER:
@@ -26,6 +31,8 @@ func loadPlayerShip():
 		
 	playerShip = ps.instance()
 	playerShip.global_position = shipInitPos
+	playerShip.hp = Player.ships[Player.main_ship].hp
+	playerShip.shield = Player.ships[Player.main_ship].shield
 	self.add_child(playerShip)
 	
 func on_ship_destroy():
@@ -34,8 +41,24 @@ func on_ship_destroy():
 	
 	get_tree().change_scene("res://scenes/gameStatus/GameStatus.tscn")
 	
+func on_boss_destroy():
+	AudioManager.stopAllStreamPlayers()
+	Player.current_level += 1
+	if Player.current_level > 4:
+		Player.game_state = Player.game_status.END
+	
+	get_tree().change_scene("res://scenes/gameStatus/GameStatus.tscn")
+	
 func onTimeout():
 	spawner.active = false
-	Player.current_level += 1
-	Player.current_level = clamp(Player.current_level, 1, 4)
-	get_tree().change_scene("res://scenes/gameStatus/GameStatus.tscn")
+	
+	$Ui/Status.text = "Warning"
+	$Ui/Status.show()
+	$TextTimer.start()
+	AudioManager.play("warning")
+	# Crear Boss
+	# Switch musica
+	# Descomentar boss connect
+	
+func onTextTimeout():
+	$Ui/Status.hide()

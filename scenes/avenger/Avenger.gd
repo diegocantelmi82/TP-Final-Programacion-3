@@ -8,6 +8,6 @@ func shoot_bullet():
 	var b = Bullet.instance()
 	b.init(bullet_power)
 	b.global_position = bulletInitPos.global_position
-	get_node("/root").add_child(b)
+	get_tree().get_current_scene().add_child(b)
 	
 	AudioManager.play("laser")

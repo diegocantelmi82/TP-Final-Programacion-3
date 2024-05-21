@@ -22,12 +22,12 @@ func shoot_bullet():
 	var b = Bullet.instance()
 	b.init(bullet_power)
 	b.global_position = bulletInitPos.global_position
-	get_node("/root").add_child(b)
+	get_tree().get_current_scene().add_child(b)
 	
 	b = Bullet.instance()
 	b.init(bullet_power)
 	b.global_position = bulletInitPos2.global_position
-	get_node("/root").add_child(b)
+	get_tree().get_current_scene().add_child(b)
 	
 	AudioManager.play("laser")
 	
@@ -37,7 +37,7 @@ func shoot_secondary_weapon():
 	var b = SpecialBullet.instance()
 	b.init(special_bullet_power)
 	b.global_position = SpecialBulletInitPos.global_position
-	get_node("/root").add_child(b)
+	get_tree().get_current_scene().add_child(b)
 	
 func dead():
 	.dead()

@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://common/Ship.gd"
 }, {
+"base": "Node",
+"class": "Spawner",
+"language": "GDScript",
+"path": "res://common/Spawner.gd"
+}, {
 "base": "Bullet",
 "class": "SpecialBullet",
 "language": "GDScript",
@@ -55,6 +60,7 @@ _global_script_class_icons={
 "GenericButton": "",
 "PlayerShip": "",
 "Ship": "",
+"Spawner": "",
 "SpecialBullet": "",
 "playerController": "",
 "playerPolling": ""

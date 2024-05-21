@@ -18,12 +18,12 @@ func shoot_bullet():
 	var b = Bullet.instance()
 	b.init(bullet_power, true)
 	b.global_position = bulletInitPos.global_position
-	get_node("/root").add_child(b)
+	get_tree().get_current_scene().add_child(b)
 	
 	b = Bullet.instance()
 	b.init(bullet_power, true)
 	b.global_position = bulletInitPos2.global_position
-	get_node("/root").add_child(b)
+	get_tree().get_current_scene().add_child(b)
 	
 func dead():
 	.dead()
@@ -36,4 +36,4 @@ func dropPowerUp():
 	if random_number == 7:
 		var powerUp = PowerUp.instance()
 		powerUp.initPowerUp(self.global_position)
-		get_node("/root").add_child(powerUp)
+		get_tree().get_current_scene().add_child(powerUp)

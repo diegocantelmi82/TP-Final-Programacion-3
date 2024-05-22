@@ -9,7 +9,7 @@ var powerUpType = {
 	power_ups.SHIELD: shieldPowerUp
 }
 var power_up
-export var shieldPwr = 20
+export var shieldPwr = 50
 export var ammoQty = 1
 
 func _ready():

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/reach_the_galaxy.mp3-84279239fca3a73b2c3cf1a54ec548cd.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/reach_the_galaxy.mp3"
+dest_files=[ "res://.import/reach_the_galaxy.mp3-84279239fca3a73b2c3cf1a54ec548cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

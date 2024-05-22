@@ -2,6 +2,10 @@ extends Node
 
 const assets = {
 	"blitz": "res://assets/sounds/blitz.wav",
+	"game_not_over": "res://assets/sounds/game_not_over.mp3",
+	"dead_space": "res://assets/sounds/dead_space.mp3",
+	"reach_the_galaxy": "res://assets/sounds/reach_the_galaxy.mp3",
+	"machine_paradigm": "res://assets/sounds/machine_paradigm.mp3",
 	"button_hover": "res://assets/sounds/button_hover.wav",
 	"laser": "res://assets/sounds/laser.wav",
 	"charge_special_shoot": "res://assets/sounds/charge_special_shoot.wav",
@@ -12,6 +16,13 @@ const assets = {
 	"ready": "res://assets/sounds/ready.wav",
 	"warning": "res://assets/sounds/warning.wav",
 	"mission_complete": "res://assets/sounds/mission_complete.wav"
+}
+
+const levelMusic = {
+	1: "blitz",
+	2: "game_not_over",
+	3: "dead_space",
+	4: "reach_the_galaxy"
 }
 
 export var audioStreamPlayers = 8

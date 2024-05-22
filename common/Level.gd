@@ -13,7 +13,7 @@ func _ready():
 	$BossDestroyTimer.connect("timeout", self, "onBossDestroyTimeout")
 	loadPlayerShip()
 	playerShip.connect("dead", self, "on_ship_destroy")
-	AudioManager.play("blitz", true)
+	AudioManager.play(AudioManager.levelMusic[Player.current_level], true)
 	spawner = spawnerClass.new()
 	add_child(spawner)
 	$TextTimer.start()
@@ -61,6 +61,7 @@ func onTextTimeout():
 	$Ui/Status.hide()
 	
 func onBossSpawnTimeout():
+	AudioManager.play("machine_paradigm")
 	spawner.spawnBoss()
 	
 func onBossDestroyTimeout():

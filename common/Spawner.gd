@@ -8,6 +8,9 @@ var enemy1: Resource = ResourceLoader.load("res://scenes/enemies/Enemy1/Enemy1.t
 var enemy2: Resource = ResourceLoader.load("res://scenes/enemies/Enemy2/Enemy2.tscn")
 var enemy3: Resource = ResourceLoader.load("res://scenes/enemies/Enemy3/Enemy3.tscn")
 var boss1: Resource = ResourceLoader.load("res://scenes/enemies/Boss1/Boss1.tscn")
+var boss2: Resource = ResourceLoader.load("res://scenes/enemies/Boss2/Boss2.tscn")
+var boss3: Resource = ResourceLoader.load("res://scenes/enemies/Boss3/Boss3.tscn")
+var boss4: Resource = ResourceLoader.load("res://scenes/enemies/Boss4/Boss4.tscn")
 
 var active: bool = true
 var spawnTimer: Timer
@@ -53,12 +56,12 @@ func spawnBoss():
 	if Player.current_level == 1:
 		boss = boss1.instance()
 	elif Player.current_level == 2:
-		boss = boss1.instance()
+		boss = boss2.instance()
 	elif Player.current_level == 3:
-		boss = boss1.instance()
+		boss = boss3.instance()
 	elif Player.current_level == 4:
-		boss = boss1.instance()
+		boss = boss4.instance()
 		
-	boss.global_position = Vector2(500, 250)
+	boss.global_position = Vector2(500, 0)
 	boss.connect("boss_dead", get_tree().get_current_scene(), "on_boss_destroy")
 	get_tree().get_current_scene().add_child(boss)

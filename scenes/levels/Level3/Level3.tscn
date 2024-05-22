@@ -18,7 +18,7 @@ background = ExtResource( 3 )
 [node name="Ui" parent="." instance=ExtResource( 4 )]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 172.0
 one_shot = true
 autostart = true
 

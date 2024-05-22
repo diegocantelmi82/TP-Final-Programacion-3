@@ -1,0 +1,55 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_9.png" type="Texture" id=1]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_7.png" type="Texture" id=2]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/ships/boss/boss_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_8.png" type="Texture" id=7]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_6.png" type="Texture" id=9]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_3.png" type="Texture" id=10]
+[ext_resource path="res://assets/ships/boss/boss_3_explosion_0.png" type="Texture" id=11]
+[ext_resource path="res://scenes/enemies/Boss3/Boss3.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 20.0
+} ]
+
+[node name="Boss3" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 12 )
+MAX_HP = 2000
+hp = 2000
+bullet_power = 50
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "explosion"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 190, 84, 182, 92, 125, 94, 113, 80, 113, 97, 96, 108, 74, 108, 53, 94, 52, 73, 43, 81, 49, 106, 31, 116, 21, 149, -20, 149, -30, 116, -44, 111, -46, 75, -53, 77, -54, 94, -66, 109, -98, 108, -114, 92, -117, 75, -131, 94, -182, 92, -193, 63, -199, -2, -213, -2, -265, 47, -275, 40, -275, -116, -258, -161, 264, -154, 274, 37, 263, 47, 217, -1, 200, -2 )
+
+[node name="BulletInitPos" type="Position2D" parent="."]
+position = Vector2( -83, 107 )
+
+[node name="BulletInitPos2" type="Position2D" parent="."]
+position = Vector2( 84, 107 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true

@@ -1,0 +1,57 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_7.png" type="Texture" id=1]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_4.png" type="Texture" id=2]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_9.png" type="Texture" id=3]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_8.png" type="Texture" id=4]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_5.png" type="Texture" id=5]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_6.png" type="Texture" id=7]
+[ext_resource path="res://assets/ships/boss/boss_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_3.png" type="Texture" id=10]
+[ext_resource path="res://assets/ships/boss/boss_2_explosion_0.png" type="Texture" id=11]
+[ext_resource path="res://scenes/enemies/Boss2/Boss2.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "explode",
+"speed": 20.0
+} ]
+
+[node name="Boss2" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 12 )
+SPEED = 500
+MAX_HP = 2000
+hp = 2000
+bullet_power = 50
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 291, 85, 182, 59, 174, 58, 174, 91, 144, 91, 142, 61, 128, 63, 134, 99, 67, 84, 67, 123, 63, 146, 54, 146, 52, 90, -1, 136, -57, 85, -53, 145, -61, 146, -68, 127, -68, 83, -137, 100, -129, 61, -139, 62, -145, 89, -172, 91, -175, 61, -296, 87, -127, -89, 128, -89 )
+
+[node name="BulletInitPos" type="Position2D" parent="."]
+position = Vector2( -159, 91 )
+
+[node name="BulletInitPos2" type="Position2D" parent="."]
+position = Vector2( 158, 91 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true

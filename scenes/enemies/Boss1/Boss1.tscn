@@ -31,6 +31,8 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource( 10 )
 SPEED = 400
+MAX_HP = 2000
+hp = 2000
 bullet_power = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

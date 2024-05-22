@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/machine_paradigm.mp3-620141cea88cffe5963de235d7394f6e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/machine_paradigm.mp3"
+dest_files=[ "res://.import/machine_paradigm.mp3-620141cea88cffe5963de235d7394f6e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

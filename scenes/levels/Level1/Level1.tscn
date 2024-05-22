@@ -20,8 +20,17 @@ background = ExtResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 120.0
+one_shot = true
 autostart = true
 
 [node name="TextTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="BossSpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="BossDestroyTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true

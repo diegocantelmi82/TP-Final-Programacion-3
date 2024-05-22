@@ -10,7 +10,8 @@ const assets = {
 	"power_up": "res://assets/sounds/power_up.wav",
 	"hit": "res://assets/sounds/hit.wav",
 	"ready": "res://assets/sounds/ready.wav",
-	"warning": "res://assets/sounds/warning.wav"
+	"warning": "res://assets/sounds/warning.wav",
+	"mission_complete": "res://assets/sounds/mission_complete.wav"
 }
 
 export var audioStreamPlayers = 8

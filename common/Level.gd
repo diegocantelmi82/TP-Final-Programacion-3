@@ -57,6 +57,10 @@ func onTimeout():
 	AudioManager.play("warning")
 	$BossSpawnTimer.start()
 	
+	if Player.current_level == 4:
+		spawner.active = true
+		spawner.spawnTimer.wait_time = 4
+	
 func onTextTimeout():
 	$Ui/Status.hide()
 	

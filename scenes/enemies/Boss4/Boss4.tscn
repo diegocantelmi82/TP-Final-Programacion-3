@@ -43,14 +43,15 @@ animation = "explode"
 polygon = PoolVector2Array( 124, 219, 128, 103, 80, 145, 70, 226, 62, 237, 59, 220, 56, 151, 43, 155, 43, 178, 35, 186, 33, 221, 26, 185, 25, 158, -27, 159, -23, 185, -30, 220, -39, 183, -40, 158, -53, 156, -49, 195, -56, 204, -60, 236, -67, 202, -78, 189, -81, 139, -81, 141, -138, 96, -121, 219, -141, 200, -155, 138, -194, 108, -227, 21, -207, -74, 209, -71, 229, 25, 190, 112, 149, 144, 147, 190 )
 
 [node name="BulletInitPos" type="Position2D" parent="."]
-position = Vector2( -122, 219 )
+position = Vector2( 72, 6 )
 
 [node name="BulletInitPos2" type="Position2D" parent="."]
-position = Vector2( 123, 219 )
+position = Vector2( -70, 6 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 
 [node name="ShootTimer" type="Timer" parent="."]
+wait_time = 1.4
 autostart = true

@@ -22,7 +22,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": false,
-"name": "explosion",
+"name": "explode",
 "speed": 20.0
 } ]
 
@@ -37,7 +37,7 @@ bullet_power = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "explosion"
+animation = "explode"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 124, 219, 128, 103, 80, 145, 70, 226, 62, 237, 59, 220, 56, 151, 43, 155, 43, 178, 35, 186, 33, 221, 26, 185, 25, 158, -27, 159, -23, 185, -30, 220, -39, 183, -40, 158, -53, 156, -49, 195, -56, 204, -60, 236, -67, 202, -78, 189, -81, 139, -81, 141, -138, 96, -121, 219, -141, 200, -155, 138, -194, 108, -227, 21, -207, -74, 209, -71, 229, 25, 190, 112, 149, 144, 147, 190 )

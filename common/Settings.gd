@@ -1,7 +1,7 @@
 extends Node
 
 # Debug
-var debug: bool = true
+var debug: bool = false
 
 # Settings
 var music_volume: float = 0.5

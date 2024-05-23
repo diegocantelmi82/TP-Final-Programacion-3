@@ -69,8 +69,8 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
-MAX_HP = 80
-hp = 80
+MAX_SHIELD = 150
+bullet_power = 30
 special_bullet_power = 150
 
 [node name="Shield" type="AnimatedSprite" parent="."]

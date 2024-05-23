@@ -68,9 +68,9 @@ scale = Vector2( 0.75, 0.75 )
 collision_mask = 2
 script = ExtResource( 21 )
 SPEED = 500
-MAX_HP = 120
-MAX_SHIELD = 150
-hp = 120
+MAX_HP = 200
+MAX_SHIELD = 250
+hp = 200
 special_bullet_power = 120
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

@@ -2,7 +2,7 @@ extends Node
 
 enum power_ups {AMMO, SHIELD}
 var type = "power_up"
-var specialAmmoPowerUp = load("res://assets/menu/damage_icon.png")
+var specialAmmoPowerUp = load("res://assets/menu/damage_power_up.png")
 var shieldPowerUp = load("res://assets/menu/shield.png")
 var powerUpType = {
 	power_ups.AMMO: specialAmmoPowerUp,
